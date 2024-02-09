@@ -54,6 +54,10 @@ public class SpellChecker {
 		word = word.toLowerCase();
 		int min_index = levenshtein(word, dictionary[0]); 
 		String str_min = dictionary[0];
+		/* using 3000 is very bad!
+		you should have used dictionary.length,
+		because now your function is limited only to dictionaries of size 3000.
+		*/
 		for (int i = 1; i < 3000; i++){
 			if(levenshtein(word, dictionary[i]) < min_index){
 				min_index = (levenshtein(word, dictionary[i]));
